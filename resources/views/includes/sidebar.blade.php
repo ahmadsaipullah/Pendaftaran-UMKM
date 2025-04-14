@@ -64,20 +64,21 @@
                     <li class="nav-header">Menu</li>
                 @endif
                 @if (auth()->user()->level_id == 1)
-                    <li class="nav-header">Admin Super</li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.index') }}" class="nav-link @yield('admin')">
-                            <i class="nav-icon ion ion-person-add"></i>
-                            <p>Admin</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('umkm.index') }}" class="nav-link @yield('umkm')">
-                            <i class="nav-icon ion ion-person-add"></i>
-                            <p>Umkm</p>
-                        </a>
-                    </li>
-                @endif
+                <li class="nav-header">Admin Super</li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.index') }}" class="nav-link @yield('admin')">
+                        <i class="nav-icon ion ion-person-stalker"></i> <!--icon for Admin -->
+                        <p>Admin</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('umkm.index') }}" class="nav-link @yield('umkm')">
+                        <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
+                        <p>UMKM</p>
+                    </a>
+                </li>
+            @endif
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

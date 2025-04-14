@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Umkm;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
@@ -12,7 +13,8 @@ class dashboardController extends Controller
     {
 
         $user = User::all()->count();
-        return view('pages.dashboard', compact('user'));
+        $umkm = Umkm::all()->count();
+        return view('pages.dashboard', compact('umkm','user'));
     }
 
     public function error()
