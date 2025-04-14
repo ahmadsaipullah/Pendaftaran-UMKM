@@ -21,8 +21,7 @@
 <aside class="main-sidebar sidebar-red elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-        <img src="{{ asset('assets/img/logoft.png') }}" alt="Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8; border: 2px solid white;">
+        <img src="{{ asset('assets/img/logoft.png') }}" alt="Logo" class="brand-image img-circle elevation-3">
         <span class="brand-text font-weight-light text-white">Sepatan UMKM</span>
     </a>
 
@@ -70,6 +69,12 @@
                         <a href="{{ route('admin.index') }}" class="nav-link @yield('admin')">
                             <i class="nav-icon ion ion-person-add"></i>
                             <p>Admin</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('umkm.index') }}" class="nav-link @yield('umkm')">
+                            <i class="nav-icon ion ion-person-add"></i>
+                            <p>Umkm</p>
                         </a>
                     </li>
                 @endif

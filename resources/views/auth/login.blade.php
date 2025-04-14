@@ -12,7 +12,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
+        <div class="card card-outline card-success">
             <div class="card-header text-center">
                 <img src="{{ asset('assets/img/logoft.png') }}" alt="logo" width="100px">
             </div>
@@ -50,7 +50,7 @@
                 @enderror
                     <div class="row">
                         <div class="col-8">
-                            <div class="icheck-primary">
+                            <div class="icheck-success">
                                 <input type="checkbox" id="remember">
                                 <label for="remember">
                                     Remember Me
@@ -59,7 +59,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-success btn-block">Sign In</button>
                         </div>
                         <!-- /.col -->
                     </div>

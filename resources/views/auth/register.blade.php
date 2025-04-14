@@ -18,7 +18,7 @@
 
 <body class="hold-transition register-page">
     <div class="register-box">
-        <div class="card card-outline card-primary">
+        <div class="card card-outline card-success">
             <div class="card-header text-center">
                 <img src="{{ asset('assets/img/logoft.png') }}" alt="logo" width="100px">
             </div>
@@ -106,7 +106,7 @@
                     @enderror
                     <div class="row">
                         <div class="col-8">
-                            <div class="icheck-primary">
+                            <div class="icheck-success">
                                 <input type="checkbox" id="agreeTerms" name="terms" value="agree" required>
                                 <label for="agreeTerms">
                                     I agree to the terms
@@ -115,7 +115,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                            <button type="submit" class="btn btn-success btn-block">Register</button>
                         </div>
                         <!-- /.col -->
                     </div>

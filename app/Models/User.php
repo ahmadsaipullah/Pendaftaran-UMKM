@@ -56,5 +56,15 @@ class User extends Authenticatable
         return $this->belongsTo(Level::class, 'level_id', 'id');
     }
 
+    public function umkms()
+    {
+        return $this->hasMany(Umkm::class);
+    }
+
+    public function updatedLogs()
+    {
+        return $this->hasMany(LogStatus::class, 'updated_by');
+    }
+
 
 }

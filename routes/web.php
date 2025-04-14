@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\profileController;
+use App\Http\Controllers\Admin\UmkmController;
 use App\Http\Controllers\Admin\{adminController,dashboardController};
 
 
@@ -35,6 +36,7 @@ Route::middleware(['AdminSuper'])->group( function(){
 
 // crud admin
 Route::resource('/admin', adminController::class);
+Route::resource('/umkm', UmkmController::class);
 
 
 });
