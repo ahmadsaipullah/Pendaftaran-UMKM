@@ -66,5 +66,10 @@ class User extends Authenticatable
         return $this->hasMany(LogStatus::class, 'updated_by');
     }
 
+    public function permohonan()
+    {
+        return $this->hasMany(Permohonan::class, 'umkm_id');
+    }
+
 
 }

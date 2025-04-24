@@ -38,6 +38,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Author</th>
                                                 <th>Nama UMKM</th>
                                                 <th>Jenis Usaha</th>
                                                 <th>Alamat UMKM</th>
@@ -45,6 +46,7 @@
                                                 <th>Kecamatan</th>
                                                 <th>Kabupaten</th>
                                                 <th>Provinsi</th>
+
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -52,6 +54,7 @@
                                             @foreach ($umkms as $umkm)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $umkm->user->name }}</td>
                                                     <td>{{ $umkm->nama_umkm }}</td>
                                                     <td>{{ $umkm->jenis_usaha }}</td>
                                                     <td>{!! $umkm->alamat_umkm !!}</td>
@@ -59,6 +62,7 @@
                                                     <td>{{ $umkm->kecamatan }}</td>
                                                     <td>{{ $umkm->kabupaten }}</td>
                                                     <td>{{ $umkm->provinsi }}</td>
+
                                                     <td>
                                                         <!-- Tombol Edit -->
                                                         <a href="#" class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#modal-edit-{{ $umkm->id }}">

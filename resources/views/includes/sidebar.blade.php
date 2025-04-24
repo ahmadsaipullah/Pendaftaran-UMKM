@@ -58,8 +58,38 @@
                     </a>
                 </li>
                 @if (auth()->user()->level_id == 3)
-                    <li class="nav-header">Menu</li>
-                @endif
+                <li class="nav-header">Menu</li>
+
+                <li class="nav-item">
+                    <a href="{{ route('userpermohonan.index') }}" class="nav-link @yield('permohonan')">
+                        <i class="nav-icon ion ion-home"></i>
+                        <p>Permohonan</p>
+                    </a>
+                </li>
+
+                @php
+                    $userId = auth()->id();
+                    $disetujui = \App\Models\Permohonan::where('user_id', $userId)
+                                ->where('status', 'Disetujui')
+                                ->exists();
+                @endphp
+
+                <li class="nav-item mt-4">
+                    @if ($disetujui)
+                        <a href="{{route('userdokumen.index')}}" class="nav-link @yield('dokumen')">
+                            <i class="nav-icon ion ion-document-text"></i>
+                            <p>Upload Dokumen</p>
+                        </a>
+                    @else
+                        <a href="javascript:void(0);" class="nav-link disabled" style="pointer-events: none; opacity: 0.6;">
+                            <i class="nav-icon ion ion-document-text"></i>
+                            <p>Upload Dokumen <small class="text-danger">(Menunggu Persetujuan)</small></p>
+                        </a>
+                    @endif
+                </li>
+            @endif
+
+
                 @if (auth()->user()->level_id == 2)
                     <li class="nav-header">Menu</li>
                 @endif
@@ -75,6 +105,29 @@
                     <a href="{{ route('umkm.index') }}" class="nav-link @yield('umkm')">
                         <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
                         <p>UMKM</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('permohonan.index') }}" class="nav-link @yield('permohonan')">
+                        <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
+                        <p>Permohonan</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('dokumen.index') }}" class="nav-link @yield('dokumen')">
+                        <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
+                        <p>Data Dokumen</p>
+                    </a>
+                </li>
+
+
+
+
+
+                <li class="nav-item">
+                    <a href="{{ route('logs.index') }}" class="nav-link @yield('logs')">
+                        <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
+                        <p>Log Status</p>
                     </a>
                 </li>
             @endif

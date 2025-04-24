@@ -22,6 +22,14 @@ class dashboardController extends Controller
         return view('error.401');
     }
 
+    public function compro()
+    {
+        $umkms = Umkm::all();
+        return view('pages.index', compact('umkms'));
+    }
+
+
+
 
 
 }

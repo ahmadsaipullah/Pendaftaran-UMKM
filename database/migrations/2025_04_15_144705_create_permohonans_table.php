@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('umkms', function (Blueprint $table) {
+        Schema::create('permohonans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('nama_umkm');
-            $table->string('jenis_usaha');
-            $table->text('alamat_umkm');
-            $table->string('kelurahan');
-            $table->string('kecamatan')->default('Sepatan');
-            $table->string('kabupaten')->default('Kabupaten Tangerang');
-            $table->string('provinsi')->default('Banten');
+            $table->foreignId('umkm_id')->constrained('umkms')->onDelete('cascade');
+            $table->string('nomor_permohonan')->unique();
+            $table->date('tanggal_pengajuan');
+            $table->string('status')->default('Pending');
+            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('umkms');
+        Schema::dropIfExists('permohonans');
     }
 };
