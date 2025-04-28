@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Umkm;
 use App\Models\User;
+use App\Models\Permohonan;
+use App\Models\DokumenPermohonan;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Response;
 
@@ -14,7 +16,9 @@ class dashboardController extends Controller
 
         $user = User::all()->count();
         $umkm = Umkm::all()->count();
-        return view('pages.dashboard', compact('umkm','user'));
+        $permohonan = Permohonan::all()->count();
+        $dokumen = DokumenPermohonan::all()->count();
+        return view('pages.dashboard', compact('umkm','user','permohonan','dokumen'));
     }
 
     public function error()

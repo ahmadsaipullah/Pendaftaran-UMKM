@@ -95,32 +95,38 @@
                 @endif
                 @if (auth()->user()->level_id == 1)
                 <li class="nav-header">Admin Super</li>
+
+                <!-- Admin -->
                 <li class="nav-item">
                     <a href="{{ route('admin.index') }}" class="nav-link @yield('admin')">
-                        <i class="nav-icon ion ion-person-stalker"></i> <!--icon for Admin -->
+                        <i class="nav-icon ion ion-person-stalker"></i> <!-- Icon Admin -->
                         <p>Admin</p>
                     </a>
                 </li>
+
+                <!-- UMKM -->
                 <li class="nav-item">
                     <a href="{{ route('umkm.index') }}" class="nav-link @yield('umkm')">
-                        <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
+                        <i class="nav-icon ion ion-briefcase"></i> <!-- Ganti ke briefcase (Usaha/UMKM) -->
                         <p>UMKM</p>
                     </a>
                 </li>
+
+                <!-- Permohonan -->
                 <li class="nav-item">
                     <a href="{{ route('permohonan.index') }}" class="nav-link @yield('permohonan')">
-                        <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
+                        <i class="nav-icon ion ion-clipboard"></i> <!-- Ganti ke clipboard (Permohonan) -->
                         <p>Permohonan</p>
                     </a>
                 </li>
+
+                <!-- Dokumen -->
                 <li class="nav-item">
                     <a href="{{ route('dokumen.index') }}" class="nav-link @yield('dokumen')">
-                        <i class="nav-icon ion ion-home"></i> <!-- Basic Ionicon -->
+                        <i class="nav-icon ion ion-document"></i> <!-- Ganti ke document (Dokumen) -->
                         <p>Data Dokumen</p>
                     </a>
                 </li>
-
-
 
 
 
